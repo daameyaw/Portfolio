@@ -7,6 +7,8 @@ import Nav from "./uis/nav";
 import Hero from "./uis/Hero";
 import About from "./uis/About";
 import Projects from "./uis/Projects";
+import Contact from "./uis/Contact";
+import Footer from "./uis/Footer";
 
 function App() {
   const [selectedPage, setselectedPage] = useState("home");
@@ -17,6 +19,8 @@ function App() {
       <Hero />
       <About />
       <Projects />
+      <Contact />
+      <Footer />
     </div>
   );
 }
