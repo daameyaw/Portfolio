@@ -11,11 +11,23 @@ import Contact from "./uis/Contact";
 import Footer from "./uis/Footer";
 
 function App() {
+  const [isMenuToggled, setIsMenuToggled] = useState(false);
+
   const [selectedPage, setselectedPage] = useState("home");
   const isAboveMediumScreens = useMediaQuery("(min-width: 900px)");
+  function closeMenu(curPage) {
+    setIsMenuToggled(false);
+    setselectedPage(curPage);
+  }
   return (
     <div className=" ">
-      <NavBar selectedPage={selectedPage} setselectedPage={setselectedPage} />
+      <NavBar
+        selectedPage={selectedPage}
+        setselectedPage={setselectedPage}
+        isMenuToggled={isMenuToggled}
+        setIsMenuToggled={setIsMenuToggled}
+        closeMenu={closeMenu}
+      />
       <Hero />
       <About />
       <Projects />
